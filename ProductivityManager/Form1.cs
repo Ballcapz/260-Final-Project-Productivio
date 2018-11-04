@@ -19,7 +19,19 @@ namespace ProductivityManager
 
         private void timer_Tick(object sender, EventArgs e)
         {
-
+            float fcpu = pCPU.NextValue();
+            float fram = pRAM.NextValue();
+            progressBarCPU.Value = (int)fcpu;
+            progressBarRAM.Value = (int)fram;
+            lblCPU.Text = string.Format("{0:0.00}%", fcpu);
+            lblRAM.Text = string.Format("{0:0.00}%", fram);
         }
+
+        private void Productivio_Load(object sender, EventArgs e)
+        {
+            timer.Start();
+        }
+
+        
     }
 }
