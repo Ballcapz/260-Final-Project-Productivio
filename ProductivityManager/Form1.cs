@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ProductivityManager
 {
-    public partial class Form1 : Form
+    public partial class Productivio : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public Productivio()
         {
             InitializeComponent();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
