@@ -32,6 +32,26 @@ namespace ProductivityManager
             timer.Start();
         }
 
-        
+        private void buttonTodo_Click(object sender, EventArgs e)
+        {
+            // bring to front TodoList tab (userControl)
+            // bottom: place to input task and + button
+        }
+
+        private void buttonMoney_Click(object sender, EventArgs e)
+        {
+            // make new user control that stores money flow with totals in each account
+            // IN THAT TAB:: earmark a certain % of the money for travel, saving, school, etc...
+            // bring to front on click
+            // bottom bar a place to input money amount and +/-
+
+        }
+
+        private void dates_Click(object sender, EventArgs e)
+        {
+            // make new user control that lets me list important dates/due dates etc...
+            // bring to front on click
+            // bottom: datepicker??? place to insert date/task going on that day and + button
+        }
     }
 }
