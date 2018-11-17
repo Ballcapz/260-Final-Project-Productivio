@@ -34,12 +34,14 @@ namespace ProductivityManager
 
         private void buttonTodo_Click(object sender, EventArgs e)
         {
+            todolist1.BringToFront();
             // bring to front TodoList tab (userControl)
             // bottom: place to input task and + button
         }
 
         private void buttonMoney_Click(object sender, EventArgs e)
         {
+            moneyFlow1.BringToFront();
             // make new user control that stores money flow with totals in each account
             // IN THAT TAB:: earmark a certain % of the money for travel, saving, school, etc...
             // bring to front on click

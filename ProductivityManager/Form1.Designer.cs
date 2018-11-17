@@ -46,6 +46,7 @@
             this.lblCPU = new System.Windows.Forms.Label();
             this.lblRAM = new System.Windows.Forms.Label();
             this.todolist1 = new ProductivityManager.Todolist();
+            this.moneyFlow1 = new ProductivityManager.MoneyFlow();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).BeginInit();
@@ -198,6 +199,14 @@
             this.todolist1.Size = new System.Drawing.Size(1119, 615);
             this.todolist1.TabIndex = 7;
             // 
+            // moneyFlow1
+            // 
+            this.moneyFlow1.BackColor = System.Drawing.Color.PaleGreen;
+            this.moneyFlow1.Location = new System.Drawing.Point(246, 198);
+            this.moneyFlow1.Name = "moneyFlow1";
+            this.moneyFlow1.Size = new System.Drawing.Size(1119, 600);
+            this.moneyFlow1.TabIndex = 8;
+            // 
             // Productivio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -211,6 +220,7 @@
             this.Controls.Add(this.progressBarCPU);
             this.Controls.Add(this.label1CPU);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.moneyFlow1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Productivio";
             this.Load += new System.EventHandler(this.Productivio_Load);
@@ -241,6 +251,7 @@
         private System.Windows.Forms.Button buttonTodo;
         private System.Windows.Forms.Button dates;
         private Todolist todolist1;
+        private MoneyFlow moneyFlow1;
     }
 }
 
