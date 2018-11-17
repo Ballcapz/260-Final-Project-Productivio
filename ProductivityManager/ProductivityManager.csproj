@@ -62,11 +62,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TodoList.cs">
+    <Compile Include="Todolist.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TodoList.Designer.cs">
-      <DependentUpon>TodoList.cs</DependentUpon>
+    <Compile Include="Todolist.Designer.cs">
+      <DependentUpon>Todolist.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -80,8 +80,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TodoList.resx">
-      <DependentUpon>TodoList.cs</DependentUpon>
+    <EmbeddedResource Include="Todolist.resx">
+      <DependentUpon>Todolist.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

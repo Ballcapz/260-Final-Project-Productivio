@@ -10,25 +10,11 @@ using System.Windows.Forms;
 
 namespace ProductivityManager
 {
-    public partial class TodoList : UserControl
+    public partial class Todolist : UserControl
     {
-        public TodoList()
+        public Todolist()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TodoList_Load(object sender, EventArgs e)
-        {
-
-            // It needs to show the label, it is not currently
-            
-            label1.Show();
-            label1.ForeColor = Color.Black;
         }
     }
 }

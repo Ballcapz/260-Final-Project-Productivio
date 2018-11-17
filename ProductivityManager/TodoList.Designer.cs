@@ -1,6 +1,6 @@
 ﻿namespace ProductivityManager
 {
-    partial class TodoList
+    partial class Todolist
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,35 +29,50 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.todoListEntryBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.MintCream;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(967, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(10);
+            this.label1.Location = new System.Drawing.Point(18, 15);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(10);
-            this.label1.Size = new System.Drawing.Size(167, 59);
+            this.label1.Size = new System.Drawing.Size(147, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Todo List";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // TodoList
+            // todoListEntryBox
+            // 
+            this.todoListEntryBox.BackColor = System.Drawing.Color.MintCream;
+            this.todoListEntryBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.todoListEntryBox.Location = new System.Drawing.Point(12, 524);
+            this.todoListEntryBox.Name = "todoListEntryBox";
+            this.todoListEntryBox.Size = new System.Drawing.Size(922, 47);
+            this.todoListEntryBox.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MintCream;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(957, 511);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 71);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // Todolist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MintCream;
+            this.BackColor = System.Drawing.Color.PaleGreen;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.todoListEntryBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(10);
-            this.Name = "TodoList";
-            this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(1154, 500);
-            this.Load += new System.EventHandler(this.TodoList_Load);
+            this.Name = "Todolist";
+            this.Size = new System.Drawing.Size(1119, 600);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -66,5 +81,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox todoListEntryBox;
+        private System.Windows.Forms.Button button1;
     }
 }

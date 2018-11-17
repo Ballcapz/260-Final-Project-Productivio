@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productivio));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dates = new System.Windows.Forms.Button();
             this.buttonMoney = new System.Windows.Forms.Button();
             this.buttonTodo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,8 +45,7 @@
             this.label2RAM = new System.Windows.Forms.Label();
             this.lblCPU = new System.Windows.Forms.Label();
             this.lblRAM = new System.Windows.Forms.Label();
-            this.todoList1 = new ProductivityManager.TodoList();
-            this.dates = new System.Windows.Forms.Button();
+            this.todolist1 = new ProductivityManager.Todolist();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).BeginInit();
@@ -63,8 +63,19 @@
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(20, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 749);
+            this.panel1.Size = new System.Drawing.Size(200, 795);
             this.panel1.TabIndex = 0;
+            // 
+            // dates
+            // 
+            this.dates.BackColor = System.Drawing.Color.MintCream;
+            this.dates.Location = new System.Drawing.Point(11, 401);
+            this.dates.Name = "dates";
+            this.dates.Size = new System.Drawing.Size(180, 60);
+            this.dates.TabIndex = 5;
+            this.dates.Text = "Important Dates";
+            this.dates.UseVisualStyleBackColor = false;
+            this.dates.Click += new System.EventHandler(this.dates_Click);
             // 
             // buttonMoney
             // 
@@ -179,33 +190,20 @@
             this.lblRAM.TabIndex = 6;
             this.lblRAM.Text = "0%";
             // 
-            // todoList1
+            // todolist1
             // 
-            this.todoList1.BackColor = System.Drawing.Color.MintCream;
-            this.todoList1.Location = new System.Drawing.Point(220, 184);
-            this.todoList1.Margin = new System.Windows.Forms.Padding(10);
-            this.todoList1.Name = "todoList1";
-            this.todoList1.Padding = new System.Windows.Forms.Padding(10);
-            this.todoList1.Size = new System.Drawing.Size(1154, 500);
-            this.todoList1.TabIndex = 7;
-            // 
-            // dates
-            // 
-            this.dates.BackColor = System.Drawing.Color.MintCream;
-            this.dates.Location = new System.Drawing.Point(11, 401);
-            this.dates.Name = "dates";
-            this.dates.Size = new System.Drawing.Size(180, 60);
-            this.dates.TabIndex = 5;
-            this.dates.Text = "Important Dates";
-            this.dates.UseVisualStyleBackColor = false;
-            this.dates.Click += new System.EventHandler(this.dates_Click);
+            this.todolist1.BackColor = System.Drawing.Color.PaleGreen;
+            this.todolist1.Location = new System.Drawing.Point(246, 198);
+            this.todolist1.Name = "todolist1";
+            this.todolist1.Size = new System.Drawing.Size(1119, 615);
+            this.todolist1.TabIndex = 7;
             // 
             // Productivio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1414, 829);
-            this.Controls.Add(this.todoList1);
+            this.ClientSize = new System.Drawing.Size(1600, 875);
+            this.Controls.Add(this.todolist1);
             this.Controls.Add(this.lblRAM);
             this.Controls.Add(this.lblCPU);
             this.Controls.Add(this.progressBarRAM);
@@ -241,8 +239,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonMoney;
         private System.Windows.Forms.Button buttonTodo;
-        private TodoList todoList1;
         private System.Windows.Forms.Button dates;
+        private Todolist todolist1;
     }
 }
 
