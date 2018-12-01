@@ -53,6 +53,7 @@ namespace ProductivityManager
         {
             // make new user control that lets me list important dates/due dates etc...
             // bring to front on click
+            eventsPage1.BringToFront();
             // bottom: datepicker??? place to insert date/task going on that day and + button
         }
     }

@@ -18,7 +18,7 @@ namespace ProductivityManager
         public string GetTypeOfEvent(int i)
         {
             string EventType = "";
-            if (i == 0)
+            if (i == 0) 
             {
                 EventType ="School";
             }
@@ -50,7 +50,6 @@ namespace ProductivityManager
         public string EventName { get; set; }
 
         public double MeetingTime { get; set; }
-        public string MeetingLeader { get; set; }
     }
 
     public class LifeEvent : IEvent
@@ -60,7 +59,7 @@ namespace ProductivityManager
 
         public string Location { get; set; }
         // ex: "family" / "other"
-        public string WhoIsAttending { get; set; }
+      /*  public string WhoIsAttending { get; set; }
         // only able to set if the event is of type life with "family attending"
         public List<string> MembersAttending { get; set; }
         // sets if it is family or other attending
@@ -75,7 +74,7 @@ namespace ProductivityManager
                 WhoIsAttending = "other";
             }
         }
-
+        */
 
     }
  }

@@ -47,6 +47,7 @@
             this.lblRAM = new System.Windows.Forms.Label();
             this.todolist1 = new ProductivityManager.Todolist();
             this.moneyFlow1 = new ProductivityManager.MoneyFlow();
+            this.eventsPage1 = new ProductivityManager.EventsPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).BeginInit();
@@ -207,6 +208,14 @@
             this.moneyFlow1.Size = new System.Drawing.Size(1119, 600);
             this.moneyFlow1.TabIndex = 8;
             // 
+            // eventsPage1
+            // 
+            this.eventsPage1.BackColor = System.Drawing.Color.PaleGreen;
+            this.eventsPage1.Location = new System.Drawing.Point(246, 198);
+            this.eventsPage1.Name = "eventsPage1";
+            this.eventsPage1.Size = new System.Drawing.Size(1119, 600);
+            this.eventsPage1.TabIndex = 9;
+            // 
             // Productivio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -221,6 +230,7 @@
             this.Controls.Add(this.label1CPU);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.moneyFlow1);
+            this.Controls.Add(this.eventsPage1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Productivio";
             this.Load += new System.EventHandler(this.Productivio_Load);
@@ -252,6 +262,7 @@
         private System.Windows.Forms.Button dates;
         private Todolist todolist1;
         private MoneyFlow moneyFlow1;
+        private EventsPage eventsPage1;
     }
 }
 
