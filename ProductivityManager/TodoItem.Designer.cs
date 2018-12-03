@@ -47,13 +47,13 @@
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = global::ProductivityManager.Properties.Resources.trash2;
-            this.pictureBox1.Image = global::ProductivityManager.Properties.Resources.trash2;
             this.pictureBox1.ImageLocation = "Center";
             this.pictureBox1.Location = new System.Drawing.Point(505, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // TodoItem
             // 

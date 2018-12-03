@@ -17,6 +17,7 @@ namespace ProductivityManager
         {
             InitializeComponent();
             GetTargets();
+            
         }
 
         int poss = 10;
@@ -29,6 +30,8 @@ namespace ProductivityManager
             poss = (item.Top + item.Height + 10);
 
         }
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
