@@ -42,11 +42,11 @@ namespace ProductivityManager
 
         void GetTargets()
         {
-            SqlConnection SQL = new SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
             using (SQL)
             {
                 SQL.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM TargetTab WHERE TargetID = 1", SQL);
+                SqlCommand command = new SqlCommand("SELECT * FROM TarTab WHERE TargetID = 1", SQL);
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -60,12 +60,12 @@ namespace ProductivityManager
 
         public void AddTargets(string insert)
         {
-            SqlConnection SQL = new SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
 
             using (SQL)
             {
                 SQL.Open();
-                SqlCommand commandSec = new SqlCommand("INSERT INTO TargetTab (TargetText, TargetID) VALUES ('"+ insert +"', '1')", SQL);
+                SqlCommand commandSec = new SqlCommand("INSERT INTO TarTab (TargetText, TargetID) VALUES ('"+ insert +"', '1')", SQL);
                 commandSec.ExecuteNonQuery();
             }
 
