@@ -63,17 +63,19 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(20, 60);
+            this.panel1.Location = new System.Drawing.Point(10, 31);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 795);
+            this.panel1.Size = new System.Drawing.Size(100, 414);
             this.panel1.TabIndex = 0;
             // 
             // dates
             // 
             this.dates.BackColor = System.Drawing.Color.MintCream;
-            this.dates.Location = new System.Drawing.Point(11, 401);
+            this.dates.Location = new System.Drawing.Point(6, 209);
+            this.dates.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dates.Name = "dates";
-            this.dates.Size = new System.Drawing.Size(180, 60);
+            this.dates.Size = new System.Drawing.Size(90, 31);
             this.dates.TabIndex = 5;
             this.dates.Text = "Important Dates";
             this.dates.UseVisualStyleBackColor = false;
@@ -82,9 +84,10 @@
             // buttonMoney
             // 
             this.buttonMoney.BackColor = System.Drawing.Color.MintCream;
-            this.buttonMoney.Location = new System.Drawing.Point(11, 282);
+            this.buttonMoney.Location = new System.Drawing.Point(6, 147);
+            this.buttonMoney.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonMoney.Name = "buttonMoney";
-            this.buttonMoney.Size = new System.Drawing.Size(180, 60);
+            this.buttonMoney.Size = new System.Drawing.Size(90, 31);
             this.buttonMoney.TabIndex = 4;
             this.buttonMoney.Text = "Money Flow";
             this.buttonMoney.UseVisualStyleBackColor = false;
@@ -93,9 +96,10 @@
             // buttonTodo
             // 
             this.buttonTodo.BackColor = System.Drawing.Color.MintCream;
-            this.buttonTodo.Location = new System.Drawing.Point(11, 174);
+            this.buttonTodo.Location = new System.Drawing.Point(6, 90);
+            this.buttonTodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonTodo.Name = "buttonTodo";
-            this.buttonTodo.Size = new System.Drawing.Size(180, 60);
+            this.buttonTodo.Size = new System.Drawing.Size(90, 31);
             this.buttonTodo.TabIndex = 3;
             this.buttonTodo.Text = "Todo List";
             this.buttonTodo.UseVisualStyleBackColor = false;
@@ -105,17 +109,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 25);
+            this.label1.Location = new System.Drawing.Point(1, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 39);
+            this.label1.Size = new System.Drawing.Size(98, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Productivio";
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Location = new System.Drawing.Point(100, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1175, 150);
+            this.panel2.Size = new System.Drawing.Size(588, 78);
             this.panel2.TabIndex = 1;
             // 
             // pRAM
@@ -138,9 +144,10 @@
             // 
             this.label1CPU.AutoSize = true;
             this.label1CPU.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1CPU.Location = new System.Drawing.Point(256, 60);
+            this.label1CPU.Location = new System.Drawing.Point(128, 31);
+            this.label1CPU.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1CPU.Name = "label1CPU";
-            this.label1CPU.Size = new System.Drawing.Size(83, 39);
+            this.label1CPU.Size = new System.Drawing.Size(43, 21);
             this.label1CPU.TabIndex = 1;
             this.label1CPU.Text = "CPU";
             // 
@@ -148,27 +155,30 @@
             // 
             this.progressBarCPU.BackColor = System.Drawing.Color.MintCream;
             this.progressBarCPU.ForeColor = System.Drawing.Color.LightGreen;
-            this.progressBarCPU.Location = new System.Drawing.Point(382, 59);
+            this.progressBarCPU.Location = new System.Drawing.Point(191, 31);
+            this.progressBarCPU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBarCPU.Name = "progressBarCPU";
-            this.progressBarCPU.Size = new System.Drawing.Size(800, 40);
+            this.progressBarCPU.Size = new System.Drawing.Size(400, 21);
             this.progressBarCPU.TabIndex = 2;
             // 
             // progressBarRAM
             // 
             this.progressBarRAM.BackColor = System.Drawing.Color.MintCream;
             this.progressBarRAM.ForeColor = System.Drawing.Color.LightGreen;
-            this.progressBarRAM.Location = new System.Drawing.Point(382, 118);
+            this.progressBarRAM.Location = new System.Drawing.Point(191, 61);
+            this.progressBarRAM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBarRAM.Name = "progressBarRAM";
-            this.progressBarRAM.Size = new System.Drawing.Size(800, 40);
+            this.progressBarRAM.Size = new System.Drawing.Size(400, 21);
             this.progressBarRAM.TabIndex = 4;
             // 
             // label2RAM
             // 
             this.label2RAM.AutoSize = true;
             this.label2RAM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2RAM.Location = new System.Drawing.Point(256, 118);
+            this.label2RAM.Location = new System.Drawing.Point(128, 61);
+            this.label2RAM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2RAM.Name = "label2RAM";
-            this.label2RAM.Size = new System.Drawing.Size(88, 39);
+            this.label2RAM.Size = new System.Drawing.Size(48, 21);
             this.label2RAM.TabIndex = 3;
             this.label2RAM.Text = "RAM";
             // 
@@ -176,9 +186,10 @@
             // 
             this.lblCPU.AutoSize = true;
             this.lblCPU.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPU.Location = new System.Drawing.Point(1257, 60);
+            this.lblCPU.Location = new System.Drawing.Point(628, 31);
+            this.lblCPU.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCPU.Name = "lblCPU";
-            this.lblCPU.Size = new System.Drawing.Size(60, 39);
+            this.lblCPU.Size = new System.Drawing.Size(31, 21);
             this.lblCPU.TabIndex = 5;
             this.lblCPU.Text = "0%";
             // 
@@ -186,41 +197,45 @@
             // 
             this.lblRAM.AutoSize = true;
             this.lblRAM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRAM.Location = new System.Drawing.Point(1257, 119);
+            this.lblRAM.Location = new System.Drawing.Point(628, 62);
+            this.lblRAM.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRAM.Name = "lblRAM";
-            this.lblRAM.Size = new System.Drawing.Size(60, 39);
+            this.lblRAM.Size = new System.Drawing.Size(31, 21);
             this.lblRAM.TabIndex = 6;
             this.lblRAM.Text = "0%";
             // 
             // todolist1
             // 
             this.todolist1.BackColor = System.Drawing.Color.PaleGreen;
-            this.todolist1.Location = new System.Drawing.Point(246, 198);
+            this.todolist1.Location = new System.Drawing.Point(123, 103);
+            this.todolist1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.todolist1.Name = "todolist1";
-            this.todolist1.Size = new System.Drawing.Size(1119, 615);
+            this.todolist1.Size = new System.Drawing.Size(560, 320);
             this.todolist1.TabIndex = 7;
             // 
             // moneyFlow1
             // 
             this.moneyFlow1.BackColor = System.Drawing.Color.PaleGreen;
-            this.moneyFlow1.Location = new System.Drawing.Point(246, 198);
+            this.moneyFlow1.Location = new System.Drawing.Point(123, 103);
+            this.moneyFlow1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.moneyFlow1.Name = "moneyFlow1";
-            this.moneyFlow1.Size = new System.Drawing.Size(1119, 600);
+            this.moneyFlow1.Size = new System.Drawing.Size(560, 312);
             this.moneyFlow1.TabIndex = 8;
             // 
             // eventsPage1
             // 
             this.eventsPage1.BackColor = System.Drawing.Color.PaleGreen;
-            this.eventsPage1.Location = new System.Drawing.Point(246, 198);
+            this.eventsPage1.Location = new System.Drawing.Point(123, 103);
+            this.eventsPage1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.eventsPage1.Name = "eventsPage1";
-            this.eventsPage1.Size = new System.Drawing.Size(1119, 600);
+            this.eventsPage1.Size = new System.Drawing.Size(560, 312);
             this.eventsPage1.TabIndex = 9;
             // 
             // Productivio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 875);
+            this.ClientSize = new System.Drawing.Size(694, 455);
             this.Controls.Add(this.todolist1);
             this.Controls.Add(this.lblRAM);
             this.Controls.Add(this.lblCPU);
@@ -232,7 +247,9 @@
             this.Controls.Add(this.moneyFlow1);
             this.Controls.Add(this.eventsPage1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Productivio";
+            this.Padding = new System.Windows.Forms.Padding(10, 31, 10, 10);
             this.Load += new System.EventHandler(this.Productivio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

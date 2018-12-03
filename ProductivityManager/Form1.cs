@@ -56,5 +56,7 @@ namespace ProductivityManager
             eventsPage1.BringToFront();
             // bottom: datepicker??? place to insert date/task going on that day and + button
         }
+
+       
     }
 }
