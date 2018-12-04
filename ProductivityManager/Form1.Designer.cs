@@ -48,6 +48,7 @@
             this.todolist1 = new ProductivityManager.Todolist();
             this.moneyFlow1 = new ProductivityManager.MoneyFlow();
             this.eventsPage1 = new ProductivityManager.EventsPage();
+            this.moneyFlow2 = new ProductivityManager.MoneyFlow();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).BeginInit();
@@ -63,17 +64,17 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(10, 31);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(10, 60);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 414);
+            this.panel1.Size = new System.Drawing.Size(100, 385);
             this.panel1.TabIndex = 0;
             // 
             // dates
             // 
             this.dates.BackColor = System.Drawing.Color.MintCream;
             this.dates.Location = new System.Drawing.Point(6, 209);
-            this.dates.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dates.Margin = new System.Windows.Forms.Padding(2);
             this.dates.Name = "dates";
             this.dates.Size = new System.Drawing.Size(90, 31);
             this.dates.TabIndex = 5;
@@ -85,7 +86,7 @@
             // 
             this.buttonMoney.BackColor = System.Drawing.Color.MintCream;
             this.buttonMoney.Location = new System.Drawing.Point(6, 147);
-            this.buttonMoney.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMoney.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMoney.Name = "buttonMoney";
             this.buttonMoney.Size = new System.Drawing.Size(90, 31);
             this.buttonMoney.TabIndex = 4;
@@ -97,7 +98,7 @@
             // 
             this.buttonTodo.BackColor = System.Drawing.Color.MintCream;
             this.buttonTodo.Location = new System.Drawing.Point(6, 90);
-            this.buttonTodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTodo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTodo.Name = "buttonTodo";
             this.buttonTodo.Size = new System.Drawing.Size(90, 31);
             this.buttonTodo.TabIndex = 3;
@@ -119,7 +120,7 @@
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(100, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(588, 78);
             this.panel2.TabIndex = 1;
@@ -156,7 +157,7 @@
             this.progressBarCPU.BackColor = System.Drawing.Color.MintCream;
             this.progressBarCPU.ForeColor = System.Drawing.Color.LightGreen;
             this.progressBarCPU.Location = new System.Drawing.Point(191, 31);
-            this.progressBarCPU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressBarCPU.Margin = new System.Windows.Forms.Padding(2);
             this.progressBarCPU.Name = "progressBarCPU";
             this.progressBarCPU.Size = new System.Drawing.Size(400, 21);
             this.progressBarCPU.TabIndex = 2;
@@ -166,7 +167,7 @@
             this.progressBarRAM.BackColor = System.Drawing.Color.MintCream;
             this.progressBarRAM.ForeColor = System.Drawing.Color.LightGreen;
             this.progressBarRAM.Location = new System.Drawing.Point(191, 61);
-            this.progressBarRAM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressBarRAM.Margin = new System.Windows.Forms.Padding(2);
             this.progressBarRAM.Name = "progressBarRAM";
             this.progressBarRAM.Size = new System.Drawing.Size(400, 21);
             this.progressBarRAM.TabIndex = 4;
@@ -208,7 +209,7 @@
             // 
             this.todolist1.BackColor = System.Drawing.Color.PaleGreen;
             this.todolist1.Location = new System.Drawing.Point(123, 103);
-            this.todolist1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.todolist1.Margin = new System.Windows.Forms.Padding(1);
             this.todolist1.Name = "todolist1";
             this.todolist1.Size = new System.Drawing.Size(560, 320);
             this.todolist1.TabIndex = 7;
@@ -217,7 +218,7 @@
             // 
             this.moneyFlow1.BackColor = System.Drawing.Color.PaleGreen;
             this.moneyFlow1.Location = new System.Drawing.Point(123, 103);
-            this.moneyFlow1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.moneyFlow1.Margin = new System.Windows.Forms.Padding(1);
             this.moneyFlow1.Name = "moneyFlow1";
             this.moneyFlow1.Size = new System.Drawing.Size(560, 312);
             this.moneyFlow1.TabIndex = 8;
@@ -226,17 +227,25 @@
             // 
             this.eventsPage1.BackColor = System.Drawing.Color.PaleGreen;
             this.eventsPage1.Location = new System.Drawing.Point(123, 103);
-            this.eventsPage1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.eventsPage1.Margin = new System.Windows.Forms.Padding(1);
             this.eventsPage1.Name = "eventsPage1";
             this.eventsPage1.Size = new System.Drawing.Size(560, 312);
             this.eventsPage1.TabIndex = 9;
+            // 
+            // moneyFlow2
+            // 
+            this.moneyFlow2.BackColor = System.Drawing.Color.PaleGreen;
+            this.moneyFlow2.Location = new System.Drawing.Point(123, 103);
+            this.moneyFlow2.Margin = new System.Windows.Forms.Padding(2);
+            this.moneyFlow2.Name = "moneyFlow2";
+            this.moneyFlow2.Size = new System.Drawing.Size(560, 312);
+            this.moneyFlow2.TabIndex = 10;
             // 
             // Productivio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 455);
-            this.Controls.Add(this.todolist1);
             this.Controls.Add(this.lblRAM);
             this.Controls.Add(this.lblCPU);
             this.Controls.Add(this.progressBarRAM);
@@ -244,12 +253,13 @@
             this.Controls.Add(this.progressBarCPU);
             this.Controls.Add(this.label1CPU);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.moneyFlow1);
+            this.Controls.Add(this.todolist1);
             this.Controls.Add(this.eventsPage1);
+            this.Controls.Add(this.moneyFlow2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Productivio";
-            this.Padding = new System.Windows.Forms.Padding(10, 31, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10, 60, 10, 10);
             this.Load += new System.EventHandler(this.Productivio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -280,6 +290,7 @@
         private Todolist todolist1;
         private MoneyFlow moneyFlow1;
         private EventsPage eventsPage1;
+        private MoneyFlow moneyFlow2;
     }
 }
 

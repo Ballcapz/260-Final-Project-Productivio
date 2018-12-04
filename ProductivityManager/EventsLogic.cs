@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductivityManager
 {
+    #region Abstractions
     // All events will need a Date and name of event
     public interface IEvent
     {
@@ -13,8 +14,10 @@ namespace ProductivityManager
         string  EventName { get; set; }
     }
     // Determines the type of event that is being inserted
-    class AllEvents
+    public abstract class AllEvents : IEvent
     {
+        public DateTime EventDate { get; set; }
+        public string EventName { get; set; }
         public string GetTypeOfEvent(int i)
         {
             string EventType = "";
@@ -34,28 +37,32 @@ namespace ProductivityManager
             return EventType;
         }
     }
+
+    #endregion
+
+    #region Event Types
     // class for school events
-    class SchoolEvent : IEvent
+    class SchoolEvent : AllEvents
     {
-        public DateTime EventDate { get; set; }
-        public string EventName { get; set; }
+      //  public DateTime EventDate { get; set; }
+      //  public string EventName { get; set; }
 
         public string RoomEventIsIn { get; set; }
         
     }
 
-    public class WorkEvent : IEvent
+    public class WorkEvent : AllEvents
     {
-        public DateTime EventDate { get; set; }
-        public string EventName { get; set; }
+      //  public DateTime EventDate { get; set; }
+      //  public string EventName { get; set; }
 
         public double MeetingTime { get; set; }
     }
 
-    public class LifeEvent : IEvent
+    public class LifeEvent : AllEvents
     {
-        public DateTime EventDate { get; set; }
-        public string EventName { get; set; }
+      //  public DateTime EventDate { get; set; }
+       // public string EventName { get; set; }
 
         public string Location { get; set; }
         // ex: "family" / "other"
@@ -77,7 +84,9 @@ namespace ProductivityManager
         */
 
     }
- }
+
+    #endregion
+}
 
 
 

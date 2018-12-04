@@ -41,7 +41,7 @@ namespace ProductivityManager
 
         private void buttonMoney_Click(object sender, EventArgs e)
         {
-            moneyFlow1.BringToFront();
+            moneyFlow2.BringToFront();
             // make new user control that stores money flow with totals in each account
             // IN THAT TAB:: earmark a certain % of the money for travel, saving, school, etc...
             // bring to front on click
