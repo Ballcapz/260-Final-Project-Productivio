@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProductivityManager
 {
@@ -16,6 +17,7 @@ namespace ProductivityManager
         public MoneyFlow()
         {
             InitializeComponent();
+            GetValues();
             // set the total value
             string trim1 = (lblChecking.Text as string).Trim('$');
             string trim2 = (lblSavings.Text as string).Trim('$');
@@ -106,6 +108,9 @@ namespace ProductivityManager
             double money = Convert.ToDouble(savingPMBox.Text);
 
             addToSavings(money);
+            AddSavingToDB(lblSavings.Text.TrimStart('$'));
+            AddCheckingToDB(lblChecking.Text.TrimStart('$'));
+            AddTotalToDB(lblTotal.Text.TrimStart('$'));
             savingPMBox.Text = "";
         }
 
@@ -114,6 +119,9 @@ namespace ProductivityManager
             double money = Convert.ToDouble(savingPMBox.Text);
 
             subtractFromSavings(money);
+            AddSavingToDB(lblSavings.Text.TrimStart('$'));
+            AddCheckingToDB(lblChecking.Text.TrimStart('$'));
+            AddTotalToDB(lblTotal.Text.TrimStart('$'));
             savingPMBox.Text = "";
 
 
@@ -124,6 +132,9 @@ namespace ProductivityManager
             double money = Convert.ToDouble(checkingPMBox.Text);
 
             addToChecking(money);
+            AddSavingToDB(lblSavings.Text.TrimStart('$'));
+            AddCheckingToDB(lblChecking.Text.TrimStart('$'));
+            AddTotalToDB(lblTotal.Text.TrimStart('$'));
             checkingPMBox.Text = "";
         }
 
@@ -132,6 +143,9 @@ namespace ProductivityManager
             double money = Convert.ToDouble(checkingPMBox.Text);
 
             subtractFromChecking(money);
+            AddSavingToDB(lblSavings.Text.TrimStart('$'));
+            AddCheckingToDB(lblChecking.Text.TrimStart('$'));
+            AddTotalToDB(lblTotal.Text.TrimStart('$'));
             checkingPMBox.Text = "";
 
         }
@@ -142,6 +156,9 @@ namespace ProductivityManager
             double money = Convert.ToDouble(savingTransfer.Text);
             addToChecking(money);
             subtractFromSavings(money);
+            AddSavingToDB(lblSavings.Text.TrimStart('$'));
+            AddCheckingToDB(lblChecking.Text.TrimStart('$'));
+            AddTotalToDB(lblTotal.Text.TrimStart('$'));
             savingTransfer.Text = "";
         }
 
@@ -151,11 +168,124 @@ namespace ProductivityManager
             double money = Convert.ToDouble(checkingTransfer.Text);
             addToSavings(money);
             subtractFromChecking(money);
+            AddSavingToDB(lblSavings.Text.TrimStart('$'));
+            AddCheckingToDB(lblChecking.Text.TrimStart('$'));
+            AddTotalToDB(lblTotal.Text.TrimStart('$'));
             checkingTransfer.Text = "";
         }
 
         #endregion
 
+        #region Set Labels
+        public void setSavings(string money)
+        {
+            double m = Convert.ToDouble(money);
 
+            lblSavings.Text = string.Format("${0:0,0.00}", m);
+        }
+
+        public void setChecking(string money)
+        {
+            double m = Convert.ToDouble(money);
+
+            lblChecking.Text = string.Format("${0:0,0.00}", m);
+        }
+
+        public void setTotal(string money)
+        {
+            double m = Convert.ToDouble(money);
+
+            lblTotal.Text = string.Format("${0:0,0.00}", m);
+        }
+
+        #endregion
+        #region Database Get and Set
+        void GetValues()
+        {
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
+            using (SQL)
+            {
+                SQL.Open();
+                SqlCommand commandSave = new SqlCommand("SELECT Saving FROM MoneyTab WHERE Id = 1", SQL);
+                SqlCommand commandCheck = new SqlCommand("SELECT Checking FROM MoneyTab WHERE Id = 2", SQL);
+                SqlCommand commandTotal = new SqlCommand("SELECT Total FROM MoneyTab WHERE Id = 3", SQL);
+
+                using (SqlDataReader reader = commandSave.ExecuteReader())
+                {
+                    
+                    while (reader.Read())
+                    {
+                        setSavings("" + reader["Saving"]);
+                        
+                    }
+                }
+                using (SqlDataReader reader = commandCheck.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+                        setChecking("" + reader["Checking"]);
+
+                    }
+                }
+                using (SqlDataReader reader = commandTotal.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+                        setTotal("" + reader["Total"]);
+
+                    }
+                }
+
+            }
+        }
+
+
+        public void AddSavingToDB(string insert)
+        {
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
+
+            using (SQL)
+            {
+                SQL.Open();
+                SqlCommand commandSec = new SqlCommand("UPDATE MoneyTab SET Saving = @s WHERE Id = @i", SQL);
+                commandSec.Parameters.AddWithValue("@s", insert);
+                commandSec.Parameters.AddWithValue("@i", 1);
+                commandSec.ExecuteNonQuery();
+            }
+
+        }
+
+        public void AddCheckingToDB(string insert)
+        {
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
+
+            using (SQL)
+            {
+                SQL.Open();
+                SqlCommand commandSec = new SqlCommand("UPDATE MoneyTab SET Checking = @c WHERE Id = @i", SQL);
+                commandSec.Parameters.AddWithValue("@c", insert);
+                commandSec.Parameters.AddWithValue("@i", 2);
+                commandSec.ExecuteNonQuery();
+            }
+
+        }
+
+        public void AddTotalToDB(string insert)
+        {
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
+
+            using (SQL)
+            {
+                SQL.Open();
+                SqlCommand commandSec = new SqlCommand("UPDATE MoneyTab SET Total = @t WHERE Id = @i", SQL);
+                commandSec.Parameters.AddWithValue("@t", insert);
+                commandSec.Parameters.AddWithValue("@i", 3);
+                commandSec.ExecuteNonQuery();
+            }
+
+        }
+        #endregion
     }
 }
