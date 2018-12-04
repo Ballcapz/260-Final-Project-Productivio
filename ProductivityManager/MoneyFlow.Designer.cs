@@ -189,6 +189,7 @@
             this.buttonAddCheck.TabIndex = 13;
             this.buttonAddCheck.Text = "+";
             this.buttonAddCheck.UseVisualStyleBackColor = false;
+            this.buttonAddCheck.Click += new System.EventHandler(this.buttonAddCheck_Click);
             // 
             // buttonSubSave
             // 
@@ -214,6 +215,7 @@
             this.buttonSubCheck.TabIndex = 15;
             this.buttonSubCheck.Text = "-";
             this.buttonSubCheck.UseVisualStyleBackColor = false;
+            this.buttonSubCheck.Click += new System.EventHandler(this.buttonSubCheck_Click);
             // 
             // buttonToSave
             // 
@@ -227,6 +229,7 @@
             this.buttonToSave.Text = "<";
             this.buttonToSave.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonToSave.UseVisualStyleBackColor = false;
+            this.buttonToSave.Click += new System.EventHandler(this.buttonToSave_Click);
             // 
             // buttonToCheck
             // 
@@ -240,6 +243,7 @@
             this.buttonToCheck.Text = ">";
             this.buttonToCheck.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonToCheck.UseVisualStyleBackColor = false;
+            this.buttonToCheck.Click += new System.EventHandler(this.buttonToCheck_Click);
             // 
             // label2
             // 
