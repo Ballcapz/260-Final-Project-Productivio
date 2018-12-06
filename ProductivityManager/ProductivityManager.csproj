@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventItem.Designer.cs">
+      <DependentUpon>EventItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventsLogic.cs" />
     <Compile Include="EventsPage.cs">
       <SubType>UserControl</SubType>
@@ -107,6 +113,9 @@
     <Compile Include="Todolist.Designer.cs">
       <DependentUpon>Todolist.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EventItem.resx">
+      <DependentUpon>EventItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EventsPage.resx">
       <DependentUpon>EventsPage.cs</DependentUpon>
     </EmbeddedResource>

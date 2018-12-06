@@ -18,31 +18,14 @@ namespace ProductivityManager
     {
         public DateTime EventDate { get; set; }
         public string EventName { get; set; }
-        public string GetTypeOfEvent(int i)
-        {
-            string EventType = "";
-            if (i == 0) 
-            {
-                EventType ="School";
-            }
-            else if (i == 1)
-            {
-                EventType = "Work";
-            }
-            else if (i == 2)
-            {
-                EventType = "Life";
-            }
-
-            return EventType;
-        }
+        public int TypeOfEvent { get; set; }
     }
 
     #endregion
 
     #region Event Types
     // class for school events
-    class SchoolEvent : AllEvents
+    public class SchoolEvent : AllEvents
     {
       //  public DateTime EventDate { get; set; }
       //  public string EventName { get; set; }

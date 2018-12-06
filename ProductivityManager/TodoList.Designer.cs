@@ -38,10 +38,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(18, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 21);
+            this.label1.Size = new System.Drawing.Size(147, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Todo List";
             // 
@@ -49,20 +49,20 @@
             // 
             this.todoListEntryBox.BackColor = System.Drawing.Color.MintCream;
             this.todoListEntryBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.todoListEntryBox.Location = new System.Drawing.Point(6, 272);
-            this.todoListEntryBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.todoListEntryBox.Location = new System.Drawing.Point(12, 523);
+            this.todoListEntryBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.todoListEntryBox.Name = "todoListEntryBox";
-            this.todoListEntryBox.Size = new System.Drawing.Size(463, 27);
+            this.todoListEntryBox.Size = new System.Drawing.Size(922, 47);
             this.todoListEntryBox.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.MintCream;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(478, 266);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(956, 512);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 37);
+            this.button1.Size = new System.Drawing.Size(140, 71);
             this.button1.TabIndex = 2;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
@@ -70,23 +70,24 @@
             // 
             // panelTodo
             // 
-            this.panelTodo.Location = new System.Drawing.Point(13, 33);
+            this.panelTodo.Location = new System.Drawing.Point(26, 63);
+            this.panelTodo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelTodo.Name = "panelTodo";
-            this.panelTodo.Size = new System.Drawing.Size(535, 228);
+            this.panelTodo.Size = new System.Drawing.Size(1070, 438);
             this.panelTodo.TabIndex = 3;
             // 
             // Todolist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGreen;
             this.Controls.Add(this.panelTodo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.todoListEntryBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Todolist";
-            this.Size = new System.Drawing.Size(560, 312);
+            this.Size = new System.Drawing.Size(1120, 600);
             this.ResumeLayout(false);
             this.PerformLayout();
 
