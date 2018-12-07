@@ -37,22 +37,22 @@
             this.lblEvent.AutoSize = true;
             this.lblEvent.Location = new System.Drawing.Point(4, 6);
             this.lblEvent.Name = "lblEvent";
-            this.lblEvent.Size = new System.Drawing.Size(30, 16);
+            this.lblEvent.Size = new System.Drawing.Size(49, 24);
             this.lblEvent.TabIndex = 0;
             this.lblEvent.Text = "Text";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(141, 6);
+            this.lblDate.Location = new System.Drawing.Point(140, 6);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 16);
+            this.lblDate.Size = new System.Drawing.Size(49, 24);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "Text";
             // 
             // EventItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
             this.Controls.Add(this.lblDate);

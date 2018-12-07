@@ -8,20 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ProductivityManager.AllEvents;
+using System.Data.SqlClient;
 
 namespace ProductivityManager
 {
     public partial class EventsPage : UserControl
     {
+        #region Constructor
         public EventsPage()
         {
             InitializeComponent();
+            GetEvents();        // to read from the database
+            
         }
+        #endregion
 
-        int possSchool = 10;
-        int possWork = 10;
-        int possLife = 10;
 
+
+        #region AddItem Buttons
+        // ints to track positioning
+        int possSchool = 5;
+        int possWork = 5;
+        int possLife = 5;
         private void buttonSchool_Click(object sender, EventArgs e)
         {
             SchoolEvent s = new SchoolEvent();
@@ -29,15 +37,9 @@ namespace ProductivityManager
             s.EventName = textBoxGetEvent.Text;
             s.RoomEventIsIn = textBoxRoom.Text;
             s.TypeOfEvent = 0;
-            MessageBox.Show("New School Event Added");
 
-            
-
-            EventItem item = new EventItem(s.EventName, s.TypeOfEvent, s.EventDate);
-            schoolPanel.Controls.Add(item);
-            item.Top = possSchool;
-            possSchool = (item.Top + item.Height + 10);
-
+            addItem(s.EventName, s.TypeOfEvent, s.EventDate, s.RoomEventIsIn);
+            AddToDB(s.EventName, s.TypeOfEvent, s.EventDate, s.RoomEventIsIn);
 
 
             // clear all textboxes
@@ -54,13 +56,11 @@ namespace ProductivityManager
             w.EventName = textBoxGetEvent.Text;
             w.MeetingTime = Convert.ToDouble(textBoxTime.Text);
             w.TypeOfEvent = 1;
-            MessageBox.Show("New work Event Added");
 
-            EventItem item = new EventItem(w.EventName, w.TypeOfEvent, w.EventDate);
-            workPanel.Controls.Add(item);
-            item.Top = possWork;
-            possWork = (item.Top + item.Height + 10);
+            addItem(w.EventName, w.TypeOfEvent, w.EventDate, w.MeetingTime.ToString());
+            AddToDB(w.EventName, w.TypeOfEvent, w.EventDate, w.MeetingTime.ToString());
 
+            // clear all textboxes
             textBoxGetEvent.Text = "";
             textBoxLocation.Text = "";
             textBoxTime.Text = "";
@@ -74,20 +74,137 @@ namespace ProductivityManager
             l.EventName = textBoxGetEvent.Text;
             l.Location = textBoxLocation.Text;
             l.TypeOfEvent = 2;
-            MessageBox.Show("New Life Event Added");
 
-            EventItem item = new EventItem(l.EventName, l.TypeOfEvent, l.EventDate);
-            lifePanel.Controls.Add(item);
-            item.Top = possLife;
-            possLife = (item.Top + item.Height + 10);
+            addItem(l.EventName, l.TypeOfEvent, l.EventDate, l.Location);
+            AddToDB(l.EventName, l.TypeOfEvent, l.EventDate, l.Location);
 
-
+            //clear all textboxes
             textBoxGetEvent.Text = "";
             textBoxLocation.Text = "";
             textBoxTime.Text = "";
             textBoxRoom.Text = "";
         }
 
+        public void addItem(string name, int i, DateTime t, string other)
+        {
+
+            DateTime today = DateTime.Today;
+            int result = DateTime.Compare(t, today);
+            if ( result < 0)
+            {
+                SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
+                using (SQL)
+                {
+                    SQL.Open();
+                    SqlCommand command = new SqlCommand("DELETE FROM EventsTab WHERE EventText = '" + name + "' ", SQL);
+                    command.ExecuteNonQuery();
+                }
+
+
+                return;     // check if the date has already passed
+
+            }
+
+
+
+            EventItem item = new EventItem(name, i, t);
+
+            if (i == 0)
+            {
+                schoolPanel.Controls.Add(item);
+                item.Top = possSchool;
+                possSchool = (item.Top + item.Height + 5);
+
+            }
+            else if (i == 1)
+            {
+                // work
+                workPanel.Controls.Add(item);
+                item.Top = possWork;
+                possWork = (item.Top + item.Height + 5);
+
+            }
+            else if (i == 2)
+            {
+                // life
+                lifePanel.Controls.Add(item);
+                item.Top = possLife;
+                possLife = (item.Top + item.Height + 5);
+            }
+
+
+
+        }
+
+        #endregion
+
+        #region DBGet and Set
+
+
+        void GetEvents()
+        {
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
+            using (SQL)
+            {
+                SQL.Open();
+                SqlCommand commandSchool = new SqlCommand("SELECT * FROM EventsTab WHERE EventID = 0", SQL);
+                SqlCommand commandWork = new SqlCommand("SELECT * FROM EventsTab WHERE EventID = 1", SQL);
+                SqlCommand commandLife = new SqlCommand("SELECT * FROM EventsTab WHERE EventID = 2", SQL);
+
+                using (SqlDataReader reader = commandSchool.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+                        addItem("" + reader["EventText"], (int)reader["EventID"], (DateTime)reader["EventDate"], (string)reader["EventOther"]);
+
+                    }
+                }
+                using (SqlDataReader reader = commandWork.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+                        addItem("" + reader["EventText"], (int)reader["EventID"], (DateTime)reader["EventDate"], (string)reader["EventOther"]);
+
+
+                    }
+                }
+                using (SqlDataReader reader = commandLife.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+                        addItem("" + reader["EventText"], (int)reader["EventID"], (DateTime)reader["EventDate"], (string)reader["EventOther"]);
+
+
+                    }
+                }
+
+            }
+        }
+
+
+        public void AddToDB(string insert, int type, DateTime date, string other)
+        {
+            SqlConnection SQL = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\zjohnson\source\repos\ProductivityManager\ProductivityManager\PdtvioStorage.mdf;Integrated Security=True");
+
+
+            using (SQL)
+            {
+                SQL.Open();
+                SqlCommand commandSec = new SqlCommand("INSERT INTO EventsTab (EventText, EventID, EventDate, EventOther) VALUES ('" + insert + "', '" + type + "', '" + date + "', '" + other + "' )", SQL);
+                commandSec.ExecuteNonQuery();
+            }
+
+        }
+
+        
+
+
+        #endregion
+
+        #region OnPageLoad
         private void EventsPage_Load(object sender, EventArgs e)
         {
             DateTime result = DateTime.Today.Subtract(TimeSpan.FromDays(1));
@@ -99,5 +216,7 @@ namespace ProductivityManager
             DateTime result = dateTimePicker1.Value;
             
         }
+
+        #endregion
     }
 }
