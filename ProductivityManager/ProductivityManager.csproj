@@ -162,6 +162,7 @@
     <EmbeddedResource Include="Todolist.resx">
       <DependentUpon>Todolist.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="moneyFlow.cd" />
     <None Include="packages.config" />
     <None Include="ProductivityManager_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
