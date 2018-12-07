@@ -35,6 +35,13 @@ namespace ProductivityManager
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // checks for empty box
+            if (string.IsNullOrWhiteSpace(todoListEntryBox.Text))
+            {
+                MessageBox.Show("Please enter some text");
+                return;
+            }
+
             string tarName = todoListEntryBox.Text;
             addItem(tarName);
             AddTargets(tarName);

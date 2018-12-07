@@ -33,13 +33,38 @@ namespace ProductivityManager
         private void buttonSchool_Click(object sender, EventArgs e)
         {
             SchoolEvent s = new SchoolEvent();
+            // if the date is before today terminate the adding of events
             s.EventDate = dateTimePicker1.Value.Date;
+            DateTime today = DateTime.Today;
+            int result = DateTime.Compare(s.EventDate, today);
+            if (result < 0)
+            {
+                MessageBox.Show("Please Enter a date after today");
+                return;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(textBoxGetEvent.Text) )
+            {
+                MessageBox.Show("Need an Event Name");
+                return;
+            }
             s.EventName = textBoxGetEvent.Text;
-            s.RoomEventIsIn = textBoxRoom.Text;
+            if (string.IsNullOrWhiteSpace(textBoxRoom.Text))
+            {
+                s.RoomEventIsIn = "NA";
+            }
+            else
+            {
+                s.RoomEventIsIn = textBoxRoom.Text;
+            }
             s.TypeOfEvent = 0;
 
             addItem(s.EventName, s.TypeOfEvent, s.EventDate, s.RoomEventIsIn);
             AddToDB(s.EventName, s.TypeOfEvent, s.EventDate, s.RoomEventIsIn);
+
+            // Alert user to new event
+            MessageBox.Show("New School Event Added on " + s.EventDate + " in room " + s.RoomEventIsIn);
 
 
             // clear all textboxes
@@ -53,12 +78,37 @@ namespace ProductivityManager
         {
             WorkEvent w = new WorkEvent();
             w.EventDate = dateTimePicker1.Value.Date;
+            DateTime today = DateTime.Today;
+            int result = DateTime.Compare(w.EventDate, today);
+            if (result < 0)
+            {
+                MessageBox.Show("Please Enter a date after today");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(textBoxGetEvent.Text))
+            {
+                MessageBox.Show("Need an Event Name");
+                return;
+            }
             w.EventName = textBoxGetEvent.Text;
-            w.MeetingTime = Convert.ToDouble(textBoxTime.Text);
+            try
+            {
+                w.MeetingTime = Convert.ToDouble(textBoxTime.Text);
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Please provide number only for the meeting time ");
+                return;
+            }
             w.TypeOfEvent = 1;
 
             addItem(w.EventName, w.TypeOfEvent, w.EventDate, w.MeetingTime.ToString());
             AddToDB(w.EventName, w.TypeOfEvent, w.EventDate, w.MeetingTime.ToString());
+
+            // alert user to new event added
+            MessageBox.Show("New Work Event Added on " + w.EventDate + " at " + w.MeetingTime + " o'clock.");
+
 
             // clear all textboxes
             textBoxGetEvent.Text = "";
@@ -70,13 +120,38 @@ namespace ProductivityManager
         private void buttonLife_Click(object sender, EventArgs e)
         {
             LifeEvent l = new LifeEvent();
+
             l.EventDate = dateTimePicker1.Value.Date;
+            DateTime today = DateTime.Today;
+            int result = DateTime.Compare(l.EventDate, today);
+            if (result < 0)
+            {
+                MessageBox.Show("Please Enter a date after today");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(textBoxGetEvent.Text))
+            {
+                MessageBox.Show("Need an Event Name");
+                return;
+            }
             l.EventName = textBoxGetEvent.Text;
-            l.Location = textBoxLocation.Text;
+            if (string.IsNullOrWhiteSpace(textBoxGetEvent.Text))
+            {
+                l.Location = "NO";
+            }
+            else
+            {
+                l.Location = textBoxLocation.Text;
+            }
             l.TypeOfEvent = 2;
 
             addItem(l.EventName, l.TypeOfEvent, l.EventDate, l.Location);
             AddToDB(l.EventName, l.TypeOfEvent, l.EventDate, l.Location);
+
+            // alert user to new event addes
+            MessageBox.Show("New Life Event Added on " + l.EventDate + " at " + l.Location);
+
 
             //clear all textboxes
             textBoxGetEvent.Text = "";
@@ -192,9 +267,18 @@ namespace ProductivityManager
 
             using (SQL)
             {
-                SQL.Open();
-                SqlCommand commandSec = new SqlCommand("INSERT INTO EventsTab (EventText, EventID, EventDate, EventOther) VALUES ('" + insert + "', '" + type + "', '" + date + "', '" + other + "' )", SQL);
-                commandSec.ExecuteNonQuery();
+                try
+                {
+                    SQL.Open();
+                    SqlCommand commandSec = new SqlCommand("INSERT INTO EventsTab (EventText, EventID, EventDate, EventOther) VALUES ('" + insert + "', '" + type + "', '" + date + "', '" + other + "' )", SQL);
+                    commandSec.ExecuteNonQuery();
+                }
+                catch (Exception h)
+                {
+                    MessageBox.Show("That event is already added");
+                    return;
+                }
+                
             }
 
         }
@@ -207,7 +291,7 @@ namespace ProductivityManager
         #region OnPageLoad
         private void EventsPage_Load(object sender, EventArgs e)
         {
-            DateTime result = DateTime.Today.Subtract(TimeSpan.FromDays(1));
+            DateTime result = DateTime.Today.Add(TimeSpan.FromDays(1));
             dateTimePicker1.Value = result;
         }
 

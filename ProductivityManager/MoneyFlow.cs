@@ -105,7 +105,17 @@ namespace ProductivityManager
         #region ButtonClicks
         private void buttonAddSave_Click(object sender, EventArgs e)
         {
-            double money = Convert.ToDouble(savingPMBox.Text);
+            double money;
+            try
+            {
+                money = Convert.ToDouble(savingPMBox.Text);
+
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Please provide number only ");
+                return;
+            }
 
             addToSavings(money);
             AddSavingToDB(lblSavings.Text.TrimStart('$'));
@@ -116,8 +126,17 @@ namespace ProductivityManager
 
         private void buttonSubSave_Click(object sender, EventArgs e)
         {
-            double money = Convert.ToDouble(savingPMBox.Text);
+            double money;
+            try
+            {
+                money = Convert.ToDouble(savingPMBox.Text);
 
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Please provide number only ");
+                return;
+            }
             subtractFromSavings(money);
             AddSavingToDB(lblSavings.Text.TrimStart('$'));
             AddCheckingToDB(lblChecking.Text.TrimStart('$'));
@@ -129,7 +148,17 @@ namespace ProductivityManager
 
         private void buttonAddCheck_Click(object sender, EventArgs e)
         {
-            double money = Convert.ToDouble(checkingPMBox.Text);
+            double money;
+            try
+            {
+                money = Convert.ToDouble(checkingPMBox.Text);
+
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Please provide number only ");
+                return;
+            }
 
             addToChecking(money);
             AddSavingToDB(lblSavings.Text.TrimStart('$'));
@@ -140,7 +169,17 @@ namespace ProductivityManager
 
         private void buttonSubCheck_Click(object sender, EventArgs e)
         {
-            double money = Convert.ToDouble(checkingPMBox.Text);
+            double money;
+            try
+            {
+                money = Convert.ToDouble(checkingPMBox.Text);
+
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Please provide number only ");
+                return;
+            }
 
             subtractFromChecking(money);
             AddSavingToDB(lblSavings.Text.TrimStart('$'));
@@ -153,7 +192,18 @@ namespace ProductivityManager
         private void buttonToCheck_Click(object sender, EventArgs e)
         {
             // Transfer val in savingTransfer to checking account
-            double money = Convert.ToDouble(savingTransfer.Text);
+            double money;
+            try
+            {
+                money = Convert.ToDouble(savingTransfer.Text);
+
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Please provide number only ");
+                return;
+            }
+
             addToChecking(money);
             subtractFromSavings(money);
             AddSavingToDB(lblSavings.Text.TrimStart('$'));
@@ -165,7 +215,17 @@ namespace ProductivityManager
         private void buttonToSave_Click(object sender, EventArgs e)
         {
             // Transfer val in checkingTransfer to checking account
-            double money = Convert.ToDouble(checkingTransfer.Text);
+            double money;
+            try
+            {
+                money = Convert.ToDouble(checkingTransfer.Text);
+
+            }
+            catch (Exception h)
+            {
+                MessageBox.Show("Please provide number only ");
+                return;
+            }
             addToSavings(money);
             subtractFromChecking(money);
             AddSavingToDB(lblSavings.Text.TrimStart('$'));
